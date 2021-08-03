@@ -81,7 +81,6 @@
 Bugs:
 1.	Newly added computers are not visible
 2.	Update computers are not reflected
-3.	Verify URL Security/CA Certificates
 
 
 
