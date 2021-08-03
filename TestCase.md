@@ -56,22 +56,26 @@
 11.	Update computer details and click on “Computer database” 
 12.	Update computer details with invalid date format and save
 13.	Update computer details and remove few fields
-14.	Delete existing computer 
-15.	Delete and create same computer
-16.	Create computer details and save
-17.	Create computer details and cancel
-18.	Create computer details and click on back button
-19.	Create computer details and do page refresh
-20.	Create computer details and click on “Computer database” 
-21.	Create computer details with invalid date format and save
-22.	Create computer details and remove few fields
-23.	Create computer mandatory fields and verify warning message
-24.	Create computer details with an existing item
-25.	Update the URL with page number
-26.	Update the URL with Item count to 50-100
-27.	Update the URL with Item count to 574
-28.	Clear filter by clicking on Computer Database Hyperlink
-29.	Verify Page number updated correctly when navigating
+14.	Update computer details with Discontinued before Introduced Date
+15.	Update computer details with same dates
+16.	Delete existing computer 
+17.	Delete and create same computer
+18.	Create computer details and save
+19.	Create computer details and cancel
+20.	Create computer details and click on back button
+21.	Create computer details and do page refresh
+22.	Create computer details and click on “Computer database” 
+23.	Create computer details with invalid date format and save
+24.	Create computer details and remove few fields
+25.	Create computer mandatory fields and verify warning message
+26.	Create computer details with an existing item
+27.	Update the URL with page number
+28.	Update the URL with Item count to 50-100
+29.	Update the URL with Item count to 574
+30.	Clear filter by clicking on Computer Database Hyperlink
+31.	Verify Page number updated correctly when navigating
+32.	Verify Add computer name for Length with Max Char
+33.	Verify Add Computer Name for Special Char
 
 
 Bugs:
