@@ -12,9 +12,16 @@ namespace EverLight.UI.Test.Automation.Common.Extensions
         {
             var webele = runner.FindElementsByLocator(element);
             webele.Click();
+            webele.Clear();
             webele.SendKeys(text);
             Console.WriteLine($"Entered text [{text}]");
             return runner;
+        }
+
+        public static string GetText(this TestRunner runner, Elements element)
+        {
+            var webele = runner.FindElementsByLocator(element);
+            return webele.Text;
         }
     }
 }

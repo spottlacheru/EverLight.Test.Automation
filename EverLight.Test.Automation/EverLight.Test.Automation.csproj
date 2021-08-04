@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.5" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.5" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="92.0.4515.10700" />
-    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.5" />
+    <PackageReference Include="Shouldly" Version="4.0.3" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.35" />
 
     
     <PackageReference Include="SpecRun.SpecFlow" Version="3.9.7" />
@@ -26,7 +29,11 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Hooks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EverLight.UI.Test.Automation.Common\EverLight.UI.Test.Automation.Common.csproj" />
+    <ProjectReference Include="..\EverLight.UI.Test.Automation.Repo\EverLight.UI.Test.Automation.Repo.csproj" />
   </ItemGroup>
 
 </Project>

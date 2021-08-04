@@ -24,6 +24,8 @@ namespace EverLight.UI.Test.Automation.Common
                 case BrowserType.Chrome:
                     this.driver = new ChromeDriver();
                     this.driver.Navigate().GoToUrl(this.options.SiteRoot);
+                    this.driver.Manage().Window.Maximize();
+                    this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                     break;
                 case BrowserType.Firefox:
                     //TODO

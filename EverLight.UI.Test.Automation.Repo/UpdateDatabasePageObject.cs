@@ -7,31 +7,28 @@ using System.Threading.Tasks;
 
 namespace EverLight.UI.Test.Automation.Repo
 {
-   public class UpdateDatabasePageObject
+   public static class UpdateDatabasePageObject
     {
-        public Elements ComputerDatabaseLnk => Elements.Find().ByXPath("//h1/a");
+        public static Elements  ComputerDatabaseLnk => Elements.Find().ByXPath("//h1/a");
 
-        public Elements ComputerNameEdit => Elements.Find().ById("name");
+        public static Elements  ComputerNameEdit => Elements.Find().ById("name");
 
-        public Elements IntroducedEdit => Elements.Find().ById("introduced");
+        public static Elements  IntroducedEdit => Elements.Find().ById("introduced");
 
-        public Elements DiscontinuedEdit => Elements.Find().ById("discontinued");
+        public static Elements  DiscontinuedEdit => Elements.Find().ById("discontinued");
 
-        public Elements CompanyLst => Elements.Find().ById("company");
+        public static Elements  CompanyLst => Elements.Find().ById("company");
 
-        public Elements CreateBtn => Elements.Find().ByXPath("//*[@id='main']/form[1]/div/input");
+        public static Elements  CreateBtn => Elements.Find().ByXPath("//*[@id='main']/form[1]/div/input");
 
-        public Elements CancelBtn => Elements.Find().ByXPath("//*[@id='main']/form[1]/div/a");
+        public static Elements  CancelBtn => Elements.Find().ByXPath("//*[@id='main']/form[1]/div/a");
 
-        public Elements DeleteComputerBtn => Elements.Find().ByXPath("//*[@id='main']/form[2]/input");
+        public static Elements  DeleteComputerBtn => Elements.Find().ByXPath("//*[@id='main']/form[2]/input");
 
-        public Elements ComputerNameWrngLbl => Elements.Find().ByXPath("//*[@id='main']/form/fieldset/div[1]/div/span");
+        public static Elements  ComputerNameWrngLbl => Elements.Find().ByXPath("//*[@id='main']/form/fieldset/div[1]/div/span");
 
-        public Elements IntroducedWrngLbl => Elements.Find().ById("//*[@id='main']/form/fieldset/div[2]/div/span");
+        public static Elements  IntroducedWrngLbl => Elements.Find().ById("//*[@id='main']/form/fieldset/div[2]/div/span");
 
-        public Elements DiscontinuedWrngLbl => Elements.Find().ById("//*[@id='main']/form/fieldset/div[3]/div/span");
-
-
-
+        public static Elements  DiscontinuedWrngLbl => Elements.Find().ById("//*[@id='main']/form/fieldset/div[3]/div/span");
     }
 }

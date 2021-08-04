@@ -28,5 +28,31 @@ namespace EverLight.UI.Test.Automation.Common.Extensions
                 throw new Exception($"Element Not found");
             return result;
         }
+
+        public static IWebElement FindElementsByID(this TestRunner runner, string id)
+        {
+          return runner.driver.FindElement(By.Id(id));
+        }
+
+
+        public static int VerifyElement(this TestRunner runner, Elements elements)
+        {
+            IReadOnlyCollection<IWebElement> result = null;
+            foreach (var ele in elements.ElementFinders)
+            {
+                var webelements = runner.driver.FindElements(ele);
+                if (webelements.Count >= 1)
+                {
+                    result = webelements;
+                    Console.WriteLine("Found the object");
+                    break;
+                }
+                Console.WriteLine($"Warning, element was not foudn with locator [{ele}]");
+
+            }
+            if (result == null)
+                throw new Exception($"Element Not found");
+            return result.Count;
+        }
     }
 }
