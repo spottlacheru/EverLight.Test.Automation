@@ -7,7 +7,7 @@ using Shouldly;
 namespace Everlight.UI.Test.Automation
 {
     [TestClass]
-    public class HeroKuApp_AlertsTest : Base
+    public class HomePageTest : Base
     {
 
         private TestRunner TestRunner { get; set; }
@@ -44,7 +44,49 @@ namespace Everlight.UI.Test.Automation
             this.TestRunner.VerifyElement(ComputerDatabasePageObject.NextBtn).ShouldBeGreaterThan(0, "Next Button element not found");
         }
 
-       
+        [TestMethod]
+        [TestCategory("SmokeTest")]
+        public void VerifyFiltersTest()
+        {
+            this.TestRunner = (TestRunner)TestContext.Properties["Runner"];
+
+            this.TestRunner
+                .EnterText(ComputerDatabasePageObject.FilterEdit, "Titan")
+                .ClickElement(ComputerDatabasePageObject.FilterSubmitBtn)
+                .VerifyColomnValues("1", "Titan").ShouldBeTrue();
+
+            this.TestRunner
+                .EnterText(ComputerDatabasePageObject.FilterEdit, "Weight Lifters")
+                .ClickElement(ComputerDatabasePageObject.FilterSubmitBtn)
+                .FilterResult().ShouldBe(0);
+
+            this.TestRunner
+                .EnterText(ComputerDatabasePageObject.FilterEdit, "AC")
+                .ClickElement(ComputerDatabasePageObject.FilterSubmitBtn)
+                 .VerifyColomnValues("1", "Ac").ShouldBeTrue();
+            this.TestRunner.GetText(ComputerDatabasePageObject.CurrentLbl).ShouldBe("Displaying 1 to 10 of 116");
+
+        }
+
+        [TestMethod]
+        [TestCategory("SmokeTest")]
+        public void AddComputerTest()
+        {
+            var companyname = Company.CompanyName();
+            this.TestRunner = (TestRunner)TestContext.Properties["Runner"];
+
+            this.TestRunner
+                .ClickElement(ComputerDatabasePageObject.AddComputerBtn)
+                .EnterText(UpdateDatabasePageObject.ComputerNameEdit, companyname)
+                .EnterText(UpdateDatabasePageObject.IntroducedEdit, Date.Past(5).ToString("yyyy-MM-dd"))
+                .EnterText(UpdateDatabasePageObject.DiscontinuedEdit, Date.Recent(10).ToString("yyyy-MM-dd"))
+                .SelectListItem(UpdateDatabasePageObject.CompanyLst, "ACVS")
+                .ClickElement(UpdateDatabasePageObject.CreateBtn)
+                .GetText(ComputerDatabasePageObject.UpdateStatusLbl).ShouldContain($"Computer {companyname} has been created");
+
+
+
+        }
 
     }
 }

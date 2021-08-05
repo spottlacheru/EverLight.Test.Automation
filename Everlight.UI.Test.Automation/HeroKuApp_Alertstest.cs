@@ -7,7 +7,7 @@ using Shouldly;
 namespace Everlight.UI.Test.Automation
 {
     [TestClass]
-    public class HomePageTest : Base
+    public class HeroKuApp_Alertstest : Base
     {
 
         private TestRunner TestRunner { get; set; }
